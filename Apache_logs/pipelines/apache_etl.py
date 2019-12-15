@@ -203,7 +203,7 @@ if __name__ == '__main__':
     call_csv_to_postgres_pipeline()
 
     # Call the pipeline iteratively to load all the csv files to postgres
-    send_all_files_to_csv_postgres_pipeline()
+    #send_all_files_to_csv_postgres_pipeline()
 
 
 
