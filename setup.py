@@ -21,6 +21,7 @@ setuptools.setup(
       'plotly>=4.3.0',
       'psutil>=5.6.7',
       'Menu>=3.2.2',
+      'pycountry>=19.8.18',
     ],
     dependency_links=[
         'git+https://github.com/ib-da-ncirl/db_toolkit.git#egg=db_toolkit',
