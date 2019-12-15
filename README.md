@@ -32,5 +32,5 @@ From the project root directory, in a terminal window:
 To run the ETL pipeline, run:
     python apache_etl.py
     
-To run the analysis pipeline, run   
+To run the analysis pipeline, run:   
     python apache_analysis.py
