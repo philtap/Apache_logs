@@ -391,7 +391,8 @@ def graph6_session_duration(context):
 ####################################################
 @solid(required_resource_keys={'postgres_warehouse'})
 def graph7_geo(context):
-    # Conversion of alpha2 into alpha3
+
+    # Conversion of alpha2 into alpha3 using pycountry
     def alpha3(alpha2):
         country = pycountry.countries.get(alpha_2=alpha2)
         if country is not None:
@@ -404,8 +405,6 @@ def graph7_geo(context):
     if client is not None:
         try:
             cursor = client.cursor()
-            # country_df = pycountry.countries ['alpha-2', 'alpha-3','name']
-            # context.log.info(f' {country_df} ')
 
             visitors_by_country_query = '''   select country_code, country_name, count(*) number_of_visitors
                                         from apache_session
@@ -415,6 +414,7 @@ def graph7_geo(context):
                                         order by count(*) desc;
                                  '''
             df = pd.read_sql(visitors_by_country_query, client)
+
 
             def alpha3 (alpha2):
                     country = pycountry.countries.get(alpha_2=alpha2)
