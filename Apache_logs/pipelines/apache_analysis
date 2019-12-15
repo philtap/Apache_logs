@@ -29,11 +29,10 @@ from dagster_toolkit.postgres import postgres_warehouse_resource
 
 from db_toolkit.misc.get_env import get_file_path
 
-from solids.analyse_apache_nodes import  graph1_avg_sessions_by_hour, graph2_avg_bookings_by_hour,  \
+from Apache_logs.solids import  graph1_avg_sessions_by_hour, graph2_avg_bookings_by_hour,  \
     graph3_visitor_bookings_pie_charts, graph4_conversion_rate_funnels, \
     graph6_session_duration, graph7_geo, graph5_bookings_per_day
 
-import pycountry
 
 @pipeline(
     mode_defs=[

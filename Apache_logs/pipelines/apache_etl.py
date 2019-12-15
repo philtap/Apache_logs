@@ -27,16 +27,12 @@ from dagster import (
 
 from db_toolkit.misc.get_env import get_file_path, get_dir_path
 
-from solids.drop_apache_tables_nodes import drop_postgres_tables
-from solids.create_apache_tables_nodes import create_postgres_tables
+from Apache_logs.solids.create_apache_tables_nodes import create_postgres_tables
 
 
-from solids.load_apache_csv_nodes import create_accessed_step_col, create_channel_col, create_session_col, \
+from Apache_logs.solids.load_apache_csv_nodes import create_accessed_step_col, create_channel_col, create_session_col, \
     add_cols_to_df, \
-    aggregate_df_by_session, add_session_duration_col, create_final_df, upload_to_postgres, load_apache_csv,\
-    upload_temp_to_postgres
-
-
+    aggregate_df_by_session, add_session_duration_col, create_final_df, upload_to_postgres, load_apache_csv
 
 from dagster_toolkit.postgres import postgres_warehouse_resource
 
